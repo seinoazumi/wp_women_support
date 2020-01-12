@@ -1,0 +1,431 @@
+/*
+Theme Name: women_support
+Theme URL: localhost:8888
+Description: テーマの説明
+Author: 作者の名前
+Version: テーマのバージョン
+Tags: テーマの特徴を表すタグ（カンマ区切り/オプション）
+License: GNU General Public License v2 or later
+License URI: LICENSE
+*/
+/*--------------------------------------------------
+fonts
+--------------------------------------------------*/
+/*--------------------------------------------------
+mixin
+--------------------------------------------------*/
+/*--------------------------------------------------
+要素に共通
+--------------------------------------------------*/
+@charset "UTF-8";
+body {
+  background-color: #F6F0EB;
+  color: #707070;
+  font-family: source-han-sans-japanese, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 14px; }
+
+a:link, a:visited, a:hover {
+  color: inherit;
+  text-decoration: none; }
+
+/*--------------------------------------------------
+汎用クラス
+--------------------------------------------------*/
+.category {
+  font-family: tenez, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: .8rem; }
+  .category .jp {
+    font-family: fot-klee-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #CC818A; }
+
+.h2-header {
+  font-family: republic-web, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #707070; }
+
+.keyvis {
+  position: relative; }
+  .keyvis__img {
+    height: auto;
+    min-width: 766px; }
+  .keyvis__caption {
+    font-family: republic-web, serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #FFFdFd;
+    position: absolute;
+    bottom: 30%; }
+    .keyvis__caption .jp {
+      font-family: fot-klee-pro, sans-serif;
+      font-weight: 500;
+      font-style: normal; }
+
+.pagination {
+  color: #E6C0BD; }
+  .pagination .page-item.active .page-link {
+    background-color: #E6C0BD;
+    border: solid 2px #E6C0BD; }
+  .pagination__link {
+    background-color: none;
+    border: solid 2px #E6C0BD; }
+  .pagination__previous, .pagination__next {
+    background: none;
+    border: none; }
+
+.read-more {
+  color: #CC818A; }
+
+.header {
+  background-color: #E6C0BD; }
+  .header .header-logo {
+    background: #fff;
+    left: 0;
+    position: absolute;
+    top: -1.5rem;
+    width: 100px;
+    z-index: 1; }
+    .header .header-logo::after {
+      border-left: 3.1rem solid transparent;
+      border-right: 3.1rem solid transparent;
+      border-top: 20px solid #FFFdFd;
+      content: '';
+      height: 0;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      width: 0; }
+  .header .header-nav {
+    color: #FFFdFd;
+    font-size: 1.2rem; }
+  .header .sp-header-nav {
+    color: #FFFdFd;
+    font-size: 2rem; }
+    .header .sp-header-nav__item {
+      margin-left: 10px; }
+
+.keyvis-caption {
+  font-family: fot-klee-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  background: radial-gradient(rgba(255, 255, 255, 0.4), transparent);
+  background: -moz-radial-gradient(rgba(255, 255, 255, 0.4), transparent);
+  background: -webkit-radial-gradient(rgba(255, 255, 255, 0.4), transparent);
+  color: #707070;
+  font-size: 1rem;
+  padding: 0; }
+
+/* main------------------------------------------*/
+.main .top-news {
+  background: #FFFdFd; }
+  .main .top-news .news__right .news-box__header {
+    font-family: source-han-sans-japanese, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px; }
+
+.main .events-container .events .event__content__header {
+  font-family: a-otf-midashi-mi-ma31-pr6n, serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 18px; }
+
+/* aside------------------------------------------*/
+.aside .sp-right-nav {
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #CC818A;
+  height: 100%;
+  position: fixed;
+  right: -350px;
+  top: 0;
+  font-size: 1.6rem;
+  transition: .4s ease-in-out;
+  width: 350px;
+  z-index: 30; }
+  .aside .sp-right-nav .nav-close-btn {
+    float: right;
+    position: relative;
+    height: 36px;
+    width: 40px; }
+    .aside .sp-right-nav .nav-close-btn__bar {
+      background-color: #CC818A;
+      height: 2px;
+      position: absolute;
+      width: 100%; }
+      .aside .sp-right-nav .nav-close-btn__bar:nth-of-type(1) {
+        top: 0;
+        transform: rotate(45deg); }
+      .aside .sp-right-nav .nav-close-btn__bar:nth-of-type(2) {
+        transform: rotate(-45deg); }
+  .aside .sp-right-nav .nav-list-box {
+    clear: both; }
+  .aside .sp-right-nav__list {
+    font-family: tenez,sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-bottom: solid 1px #CC818A; }
+  .aside .sp-right-nav .btn__donate {
+    background: #E6C0BD;
+    border-radius: 0px;
+    color: #FFFdFd;
+    font-family: republic-web, serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.6rem; }
+    .aside .sp-right-nav .btn__donate .btn__jp {
+      font-family: fot-klee-pro, sans-serif;
+      font-weight: 500;
+      font-style: normal; }
+
+.aside .open {
+  right: 0px;
+  transition: .4s ease-in-out; }
+
+.aside .right-nav__list {
+  border-top: solid 1px #CCCCCC; }
+  .aside .right-nav__list:last-child {
+    border-bottom: solid 1px #CCCCCC; }
+  .aside .right-nav__list .nav-link {
+    color: #707070; }
+    .aside .right-nav__list .nav-link .fa-facebook {
+      font-size: 2rem; }
+
+/* aboutus contact------------------------------------------*/
+.aboutus-container {
+  background-color: #FFFdFd;
+  background-image: url(assets/img/flower-bouket.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: cover; }
+  .aboutus-container__left {
+    background-color: rgba(255, 255, 255, 0.5); }
+    .aboutus-container__left .test {
+      margin-top: 5rem; }
+      .aboutus-container__left .test .aboutus {
+        height: 250px; }
+        .aboutus-container__left .test .aboutus__btn-box {
+          margin-top: 2rem; }
+          .aboutus-container__left .test .aboutus__btn-box__btn {
+            background: #E6C0BD;
+            border-radius: 0px;
+            color: #FFFdFd;
+            font-family: republic-web, serif;
+            font-weight: 400;
+            font-style: normal; }
+            .aboutus-container__left .test .aboutus__btn-box__btn .btn__jp {
+              font-family: fot-klee-pro, sans-serif;
+              font-weight: 500;
+              font-style: normal; }
+  .aboutus-container__right {
+    background-color: rgba(255, 255, 255, 0.5); }
+
+.contactus-container .contactus__form .label-inline {
+  font-family: republic-web, serif;
+  font-weight: 400;
+  font-style: normal;
+  border-bottom: dotted 2px #CC818A; }
+  .contactus-container .contactus__form .label-inline .label__jp {
+    font-family: fot-klee-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal; }
+  .contactus-container .contactus__form .label-inline .input-area {
+    border: none;
+    outline: none;
+    background: none;
+    resize: none; }
+
+.contactus-container .contactus__form .label-block {
+  font-family: republic-web, serif;
+  font-weight: 400;
+  font-style: normal; }
+  .contactus-container .contactus__form .label-block .label__jp {
+    font-family: fot-klee-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal; }
+
+.contactus-container .contactus__form .textarea {
+  border: none;
+  outline: none;
+  background: none;
+  resize: none;
+  border: dotted 2px #CC818A; }
+
+.contactus-container .contactus__form .submit-area .btn__submit {
+  background: #E6C0BD;
+  border-radius: 0px;
+  color: #FFFdFd;
+  font-family: republic-web, serif;
+  font-weight: 400;
+  font-style: normal;
+  background: #CC818A;
+  border-radius: 0; }
+  .contactus-container .contactus__form .submit-area .btn__submit .btn__jp {
+    font-family: fot-klee-pro, sans-serif;
+    font-weight: 500;
+    font-style: normal; }
+
+.contactus-container .contactus__form .form-tab {
+  height: 400px; }
+
+/* aboutus contact------------------------------------------*/
+.footer {
+  background-color: #E6C0BD;
+  color: #FFFdFd; }
+  .footer__header {
+    font-family: source-han-sans-japanese, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #FFFdFd;
+    font-size: 1rem; }
+
+/* トップに戻るボタン -------------------------------------------*/
+.back-to-top {
+  border-left: solid 2px #CC818A;
+  border-top: solid 2px #CC818A;
+  display: none;
+  height: 40px;
+  position: fixed;
+  bottom: 50px;
+  right: 40px;
+  transform: rotate(45deg);
+  width: 40px; }
+
+/* ハンバーガーメニュー -------------------------------------------*/
+.menu-trigger,
+.menu-trigger span {
+  box-sizing: border-box;
+  display: inline-block;
+  transition: all .4s; }
+
+.menu-trigger {
+  height: 24px;
+  position: relative;
+  width: 30px; }
+
+.menu-trigger span {
+  background-color: #fff;
+  height: 2px;
+  position: absolute;
+  left: 0;
+  width: 100%; }
+
+.menu-trigger span:nth-of-type(1) {
+  top: 0; }
+
+.menu-trigger span:nth-of-type(2) {
+  top: 10px; }
+
+.menu-trigger span:nth-of-type(3) {
+  bottom: 0; }
+
+/* mediaquery------------------------------------------*/
+@media screen and (min-width: 992px) {
+  .header .header-logo {
+    width: auto;
+    max-width: 180px; }
+    .header .header-logo::after {
+      border-left: 5.6rem solid transparent;
+      border-right: 5.6rem solid transparent;
+      border-top: 20px solid #FFFdFd; }
+  .back-to-top {
+    display: none;
+    height: 80px;
+    position: fixed;
+    bottom: 300px;
+    right: 50px;
+    width: 80px; } }
+
+@media screen and (min-width: 576px) {
+  .keyvis-caption {
+    font-size: xx-large; }
+  .aboutus-container {
+    background-size: contain; } }
+
+/*------------------------------------------
+  フォームのタブ切り替え
+-------------------------------------------*/
+.form-panel {
+  display: none;
+  min-height: 300px; }
+
+.active {
+  display: block; }
+
+.index {
+  border-bottom: dotted 4px #CC818A;
+  border-top: dotted 4px #CC818A; }
+  .index__item {
+    list-style-type: none; }
+    .index__item:before {
+      color: #CC818A;
+      content: '●'; }
+
+.activity-card {
+  background-color: none; }
+  .activity-card__img {
+    height: 187px;
+    margin: 0;
+    overflow: hidden;
+    position: relative; }
+    .activity-card__img img {
+      height: 100%;
+      width: auto; }
+  .activity-card__title {
+    font-family: republic-web, serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #707070; }
+
+.card-read-more {
+  background-color: rgba(90, 90, 90, 0.7);
+  color: #FFFdFd;
+  display: block;
+  height: 187px;
+  width: 100%; }
+  .card-read-more__msg {
+    font-family: republic-web, serif;
+    font-weight: 400;
+    font-style: normal;
+    border: #FFFdFd solid 2px;
+    display: inline-block;
+    font-size: 1.4rem;
+    padding: 10px 20px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%); }
+
+.activity__title {
+  font-family: republic-web, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #707070;
+  border-bottom: dotted 4px #CC818A; }
+
+.activity__img {
+  max-height: 446px;
+  overflow: hidden; }
+
+.activity__intro__title {
+  font-family: republic-web, serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #707070; }
+
+.activity__intro__quote {
+  background-color: #FFFdFd;
+  position: relative; }
+  .activity__intro__quote::before {
+    color: #E6C0BD;
+    content: '\f10d';
+    font-family: "Font Awesome 5 Free";
+    font-size: 3rem;
+    position: absolute;
+    left: -10px;
+    top: -20px; }
