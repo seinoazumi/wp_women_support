@@ -1,0 +1,160 @@
+/*--------------------------------------------------
+fonts
+--------------------------------------------------*/
+@mixin han-sans{
+  font-family: source-han-sans-japanese, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+@mixin han-sans-r{
+  font-family: source-han-sans-japanese, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin klee{ 
+  font-family: fot-klee-pro, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+@mixin midashi-mi {
+  font-family: a-otf-midashi-mi-ma31-pr6n, serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+// カテゴリーの表示
+@mixin tenez-l-italic {
+  font-family: tenez, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+// todo: h2のheader, republicとどちらが良いか検討。republiucになった場合tenezは不要
+@mixin tenez-r{
+  font-family: tenez,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin republic{
+  font-family: republic-web, serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin ryumin{
+  font-family: a-otf-ryumin-pr6n, serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+/*--------------------------------------------------
+mixin
+--------------------------------------------------*/
+
+@mixin btn-common{
+  background: $pink-lv2;
+  border-radius: 0px;
+  color:$white;
+  @include republic;
+  .btn__jp{
+    @include klee;
+  }
+}
+
+@mixin form-reset {
+  border: none;
+  outline:none;
+  background: none;
+  resize: none;
+}
+
+@mixin title-header {
+  @include republic;
+  color: $gray-lv3;
+}
+
+@mixin keyvis-caption {
+  @include republic;
+  .jp {
+    @include klee;
+  }
+}
+
+@mixin label-common{
+  @include republic;
+  .label__jp{
+    @include klee;
+  }
+}
+
+/*--------------------------------------------------
+要素に共通
+--------------------------------------------------*/
+
+body {
+  background-color: $pink-lv1;
+  color: $gray-lv3;
+  @include han-sans;
+  font-size: 14px;
+}
+
+a:link, a:visited, a:hover{
+  color: inherit;
+  text-decoration: none;
+}
+
+/*--------------------------------------------------
+汎用クラス
+--------------------------------------------------*/
+
+.category {
+  @include tenez-l-italic;
+  font-size: .8rem;
+  .jp {
+    @include klee;
+    color: $pink-lv3;
+  }
+}
+
+.h2-header {
+  @include republic;
+  color: $gray-lv3;
+}
+
+.keyvis {
+  position: relative;
+  &__img {
+    height: auto;
+    min-width: 766px;
+  }
+  &__caption {
+    @include keyvis-caption;
+    color: $white;
+    position: absolute;
+      bottom: 30%;
+  }
+}
+
+.pagination {
+  color: $pink-lv2;
+  .page-item.active .page-link {
+    background-color: $pink-lv2;
+    border: $border-pink2-solid-2px;
+  }
+  &__link {
+    background-color: none;
+    border: $border-pink2-solid-2px;
+  }
+  &__previous, &__next {
+    background: none;
+    border: none;
+  }
+}
+
+.read-more {
+  color: $pink-lv3;
+}
