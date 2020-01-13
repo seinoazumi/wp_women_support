@@ -2,11 +2,16 @@
   <!-- end header ------------------------------------------------------>
 
   <!-- top slider--------------------------------------------------------->
+  <?php 
+if ( have_posts() ) {
+	while ( have_posts() ) {
+		the_post(); ?>
+		
   <div id="topSlider" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <figure class="carousel-item active">
-        <img src="assets/img/slider_img_1.jpeg" alt="スライドのイメージ" class="w-100">
-        <figcaption class="carousel-caption keyvis-caption">
+        <img src="<?php echo get_template_directory_uri(); ?>/assets/img/slider_img_1.jpeg" alt="スライドのイメージ" class="w-100">
+        <figcaption class="carousel-caption top-slider-caption">
           母子家庭の輝く笑顔のために
         </figcaption>
       </figure>
@@ -49,7 +54,7 @@
             <h2 class="tenez-l h2-header text-center">What's New</h2>
             <article class="top-news py-4 d-sm-flex">
               <figure class="col">
-                <img src="assets/img/mother-and-baby-sunset.jpeg" alt="最新のニュースに関連する写真" class="news__img img-fluid">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mother-and-baby-sunset.jpeg" alt="最新のニュースに関連する写真" class="news__img img-fluid">
               </figure>
               <div class="news__right col">
                 <section class="news-box">
@@ -79,7 +84,7 @@
             <div class="events row">
               <article class="event d-block col-sm">
                 <figure>
-                  <img src="assets/img/confirm-promise.jpeg" alt="イベントのイメージ写真" class="event__img img-fluid">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/confirm-promise.jpeg" alt="イベントのイメージ写真" class="event__img img-fluid">
                 </figure>
                 <section class="event__content">
                   <h3 class="event__content__header text-center">
@@ -93,7 +98,7 @@
               </article>
               <article class="event d-block col-sm">
                 <figure>
-                  <img src="assets/img/mom-child-hug.jpeg" alt="" class="event__img img-fluid w-100">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mom-child-hug.jpeg" alt="" class="event__img img-fluid w-100">
                 </figure>
                 <section class="event__content">
                   <h3 class="event__content__header text-center">
@@ -107,7 +112,7 @@
               </article>
               <article class="event d-block col-sm">
                 <figure>
-                  <img src="assets/img/wisteria-trellis_mom_and_child.jpeg" alt="" class="event__img img-fluid w-100">
+                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/wisteria-trellis_mom_and_child.jpeg" alt="" class="event__img img-fluid w-100">
                 </figure>
                 <section class="event__content">
                   <h3 class="event__content__header text-center">
@@ -306,7 +311,7 @@
               <!-- Form 2 -->
               <div id="form2" class="form-panel">
                 ここに２つ目のフォームの内容が入ります。下記はダミー画像です。
-                <img src="assets/img/form2_img.png" alt="２つ目のフォームのダミー画像です" class="img-fluid">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/form2_img.png" alt="２つ目のフォームのダミー画像です" class="img-fluid">
                 <!-- 全フォーム共通の要素 -->
                 <div class="form-common text-center submit-area">
                   <input type="checkbox" name="privacy" id="privacy">
@@ -322,7 +327,7 @@
               <!-- Form 3 -->
               <div id="form3" class="form-panel">
                 ここに3つ目のフォームの内容が入ります。下記はダミー画像です。
-                <img src="assets/img/form3_img.png" alt="3つ目のフォームのダミー画像です" class="img-fluid">
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/form3_img.png" alt="3つ目のフォームのダミー画像です" class="img-fluid">
                 <!-- 全フォーム共通の要素 -->
                 <div class="form-common text-center submit-area">
                   <input type="checkbox" name="privacy" id="privacy">
@@ -338,7 +343,7 @@
               <!-- Form 4 -->
               <div id="form4" class="form-panel">
                 ここに4つ目のフォームの内容が入ります。下記はダミー画像です。
-                <img src="assets/img/form4_img.png" alt="3つ目のフォームのダミー画像です" class="img-fluid">   
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/form4_img.png" alt="3つ目のフォームのダミー画像です" class="img-fluid">   
                 <!-- 全フォーム共通の要素 -->
                 <div class="form-common text-center submit-area">
                   <input type="checkbox" name="privacy" id="privacy">
@@ -356,16 +361,13 @@
         </div>
 
         <!-- end form --------------------------------------------------------->
-
       </div>    
     </div>
 
-    <!-- back-to-top button --------------------------------------------------------->
-  <div id="back-to-top" class="back-to-top">
-    <p class="sr-only">トップに戻るボタン</p>
-  </div>
-  <!-- end back-to-top button --------------------------------------------------------->
-
+        <?php
+      } // end while
+    } // end if
+    ?>
   <!-- footer --------------------------------------------------------->
 <?php get_footer(); ?>
 <!-- end footer --------------------------------------------------------->

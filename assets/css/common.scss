@@ -78,10 +78,7 @@ mixin
 }
 
 @mixin keyvis-caption {
-  @include republic;
-  .jp {
-    @include klee;
-  }
+  font-family: 'republic-web', 'fot-klee-pro', serif;
 }
 
 @mixin label-common{
@@ -126,7 +123,9 @@ a:link, a:visited, a:hover{
 }
 
 .keyvis {
+  overflow: hidden;
   position: relative;
+  max-width: 100%;
   &__img {
     height: auto;
     min-width: 766px;

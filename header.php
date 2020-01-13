@@ -26,7 +26,7 @@
     <div class="navbar justify-content-end">
       <h1 class="header-logo px-4 pt-5 pt-md-3">
         <figure class="header-logo__img">
-          <img src="<?php get_template_directory_uri(); ?>assets/img/logo-sample.png" alt="団体ロゴマーク" class="header-logo__img img-fluid">
+          <img src="<?php echo get_template_directory_uri(); ?>/assets/img/logo-sample.png" alt="団体ロゴマーク" class="header-logo__img img-fluid">
         </figure>
       </h1>
       <nav class="sp-header-nav d-lg-none w-100">

@@ -1,6 +1,7 @@
+@charset "UTF-8";
 /*
-Theme Name: women_support
-Theme URL: localhost:8888
+Theme Name: テーマの名前（必須）
+Theme URL: テーマのサイトのURI
 Description: テーマの説明
 Author: 作者の名前
 Version: テーマのバージョン
@@ -17,7 +18,6 @@ mixin
 /*--------------------------------------------------
 要素に共通
 --------------------------------------------------*/
-@charset "UTF-8";
 body {
   background-color: #F6F0EB;
   color: #707070;
@@ -51,21 +51,17 @@ a:link, a:visited, a:hover {
   color: #707070; }
 
 .keyvis {
-  position: relative; }
+  overflow: hidden;
+  position: relative;
+  max-width: 100%; }
   .keyvis__img {
     height: auto;
     min-width: 766px; }
   .keyvis__caption {
-    font-family: republic-web, serif;
-    font-weight: 400;
-    font-style: normal;
+    font-family: 'republic-web', 'fot-klee-pro', serif;
     color: #FFFdFd;
     position: absolute;
     bottom: 30%; }
-    .keyvis__caption .jp {
-      font-family: fot-klee-pro, sans-serif;
-      font-weight: 500;
-      font-style: normal; }
 
 .pagination {
   color: #E6C0BD; }
@@ -109,11 +105,12 @@ a:link, a:visited, a:hover {
     font-size: 2rem; }
     .header .sp-header-nav__item {
       margin-left: 10px; }
+  .header .nav-link:hover {
+    color: #FFFdFd;
+    text-decoration: underline; }
 
-.keyvis-caption {
-  font-family: fot-klee-pro, sans-serif;
-  font-weight: 500;
-  font-style: normal;
+.top-slider-caption {
+  font-family: 'republic-web', 'fot-klee-pro', serif;
   background: radial-gradient(rgba(255, 255, 255, 0.4), transparent);
   background: -moz-radial-gradient(rgba(255, 255, 255, 0.4), transparent);
   background: -webkit-radial-gradient(rgba(255, 255, 255, 0.4), transparent);
@@ -342,7 +339,7 @@ a:link, a:visited, a:hover {
     width: 80px; } }
 
 @media screen and (min-width: 576px) {
-  .keyvis-caption {
+  .top-slider-caption {
     font-size: xx-large; }
   .aboutus-container {
     background-size: contain; } }
@@ -429,3 +426,4 @@ a:link, a:visited, a:hover {
     position: absolute;
     left: -10px;
     top: -20px; }
+

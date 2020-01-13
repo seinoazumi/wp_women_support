@@ -1,70 +1,16 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>架空の女性支援団体のホームページ</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-
-<!-- body----------------------------------------------------------------->
-<body>
-  <!-- header------------------------------------------------------------>
-  <header class="header py-lg-4">
-    <div class="container">
-      <div class="navbar justify-content-end">
-        <h1 class="header-logo px-4 pt-5 pt-md-3">
-          <figure class="header-logo__img">
-            <img src="assets/img/logo-sample.png" alt="団体ロゴマーク" class="header-logo__img img-fluid">
-          </figure>
-        </h1>
-        <nav class="sp-header-nav d-lg-none w-100">
-          <ul class="nav float-right">
-            <li class="sp-header-nav__item">
-              <a href="#">
-                <i class="far fa-envelope"></i>
-              </a>
-            </li>
-            <li id="right-nav-btn" class="sp-header-nav__item">
-              <a class="menu-trigger" href="#">
-                <span></span>
-                <span></span>
-                <span></span>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="header-nav col-9 row justify-content-between">
-          <nav class="header-nav__left d-none d-lg-block">
-            <ul class="nav">
-              <li class="header-nav__left--list nav-item"><a href="index.html" class="nav-link">HOME</a></li>
-              <li class="header-nav__left--list nav-item"><a href="activities.html" class="nav-link">ABOUT</a></li>
-              <li class="header-nav__left--list nav-item"><a href="#" class="nav-link">EVENT</a></li>
-              <li class="header-nav__left--list nav-item"><a href="contact.html" class="nav-link">CONTACT</a></li>
-              <li class="header-nav__left--list nav-item"><a href="#" class="nav-link">BLOG</a></li>
-            </ul>
-          </nav>
-          <nav class="header-nav__right d-none d-lg-block">
-            <ul class="nav">
-              <li class="header-nav__right--list nav-item"><a href="https://syncable.biz/associate/decentlifejapan/" target="_new" class="nav-link">DONATE</a></li>
-              <li class="header-nav__right--list nav-item"><a href="contact.html" class="nav-link">CONTACT</a></li>
-            </ul>
-          </nav>
-        </div>        
-      </div>
-    </div>
-  </header>
+<?php echo get_header(); ?>
   <!-- end header ------------------------------------------------------>
 
   <!-- keyvisual--------------------------------------------------------->
   <div class="keyvis row no-gutters text-center">
-    <img src="assets/img/activity_kvs_test.png" class="keyvis__img img-fluid" alt="事業のイメージ画像">
-    <h2 class="keyvis__caption w-100">　Activity<span class="jp">事業紹介</span></h2>
+    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/activity_kvs_test.png" class="keyvis__img img-fluid" alt="事業のイメージ画像">
+    <h2 class="keyvis__caption w-100">Activity<span class="jp">事業紹介</span></h2>
   </div>
   <!-- end keyvisual ----------------------------------------------------->
+  <?php 
+if ( have_posts() ) {
+	while ( have_posts() ) {
+		the_post(); ?>
   
     <div class="container">
       <div class="row">
@@ -208,118 +154,13 @@
       </div>
     </div>
 
-  <!-- back-to-top button --------------------------------------------------------->
-  <div id="back-to-top" class="back-to-top">
-    <p class="sr-only">トップに戻るボタン</p>
-  </div>
-  <!-- end back-to-top button --------------------------------------------------------->
-
+    <?php
+      } // end while
+    } // end if
+    ?>
   <!-- footer --------------------------------------------------------->
-  <footer class="footer py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-md-3">
-          <h2 class="footer__header">
-            団体概要
-          </h2>
-          <ul class="footer__nav nav flex-column">
-            <li class="list-item">
-              <a href="#" class="list-link">
-                団体名称はこちら
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="#" class="list-link">
-                神奈川県＊＊市**区** 1-1-1
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="#" class="list-link">
-                090-XXXX-XXXX
-              </a>
-            </li>
-          </ul>
-        </div>
-      
-        <div class="site-map col-12 col-md-6 mt-3 mt-md-0">
-          <h2 class="footer__header">
-            サイトマップ
-          </h2>
-          <div class="site-map__box d-md-flex">
-            <ul class="footer__nav nav flex-column w-50">
-              <li class="list-item">
-                <a href="#" class="list-link">
-                  ホーム
-                </a>
-              </li>
-              <li class="list-item">
-                <a href="#" class="list-link">
-                  最新のお知らせ
-                </a>
-              </li>
-              <li class="list-item">
-                <a href="#" class="list-link">
-                  私たちのしていること
-                </a>
-              </li>
-            </ul>
-            <ul class="footer__nav nav flex-column w-50">
-              <li class="list-item">
-                <a href="#" class="list-link">
-                  イベント一覧
-                </a>
-              </li>
-              <li class="list-item">
-                <a href="#" class="list-link">
-                  ご支援のお願い
-                </a>
-              </li>
-              <li class="list-item">
-                <a href="#" class="list-link">
-                  お問い合わせ
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="col-12 col-md-3 mt-3 mt-md-0">
-          <h2 class="footer__header">
-            連携サイト
-          </h2>
-          <ul class="footer__nav nav flex-column">
-            <li class="list-item">
-              <a href="#" class="list-link">
-                代表ブログ
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="#" class="list-link">
-                連携サイト１
-              </a>
-            </li>
-            <li class="list-item">
-              <a href="#" class="list-link">
-                連携サイト２
-              </a>
-            </li>
-          </ul>
-        </div>
-      
-        <small class="w-100 copy text-center pt-4">
-          Copyright &copy; 2020 women-support. All Rights Reserved.
-        </small>
-      </div>
-    </div>
-  </footer>
-
-<script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-<script src="./main.js"></script>
-
+<?php get_footer(); ?>
 <!-- end footer --------------------------------------------------------->
+<?php wp_footer(); ?>
 </body>
 </html>

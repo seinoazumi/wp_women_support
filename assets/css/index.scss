@@ -32,10 +32,13 @@
       margin-left: 10px;
     }
   }
+  .nav-link:hover{
+    color: $white;
+    text-decoration: underline;
+  }
 }
-
-.keyvis-caption {
-  @include klee;
+.top-slider-caption {
+  @include keyvis-caption;
   background: radial-gradient($white-shadow,transparent);
   background: -moz-radial-gradient($white-shadow,transparent);
   background: -webkit-radial-gradient($white-shadow,transparent);
@@ -282,7 +285,7 @@
 }
 // smallサイズ以上
 @media screen and (min-width: 576px){
-  .keyvis-caption{
+  .top-slider-caption{
     font-size: xx-large;
   }
   .aboutus-container{
